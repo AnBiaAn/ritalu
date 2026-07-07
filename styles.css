@@ -2624,9 +2624,13 @@ main {
     gap: 12px;
   }
 
-  .beliefs__photo,
-  .beliefs__panel {
+  .beliefs__photo {
     aspect-ratio: 1.1 / 1;
+  }
+
+  .beliefs__panel {
+    aspect-ratio: auto;
+    height: 64vh;
   }
 
   .faq {
