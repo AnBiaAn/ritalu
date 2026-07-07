@@ -719,6 +719,8 @@ if (applyModal) {
       const dy = e.changedTouches[0].clientY - startY;
       if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
         stepBy(dx < 0 ? 1 : -1); // swipe left = next, right = previous
+      } else if (Math.abs(dx) < 12 && Math.abs(dy) < 12) {
+        stepBy(1); // tap on the screen = next
       }
       startX = startY = null;
     }, { passive: true });
