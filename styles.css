@@ -3411,3 +3411,19 @@ main {
   font-size: 15px !important;
   font-weight: 500;
 }
+
+/* ---------- Mobile: unify body copy to 17px ---------- */
+@media (max-width: 640px) {
+  .hero__copy p,
+  .wellness-module__copy p,
+  .section__heading p,
+  .step-card p,
+  .grow__overlay p,
+  .faq__intro p,
+  .faq__a-inner p,
+  .cta__inner p,
+  .dashboard__copy p,
+  .plans__lead {
+    font-size: 17px;
+  }
+}
