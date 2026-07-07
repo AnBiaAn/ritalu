@@ -2537,6 +2537,10 @@ main {
     min-height: calc(100svh - 58px + 80px);
   }
 
+  .hero__image {
+    opacity: 0.95;
+  }
+
   .hero__copy {
     width: calc(100% - 44px);
     margin: 0 22px 36px;
