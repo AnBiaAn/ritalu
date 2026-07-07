@@ -2785,7 +2785,7 @@ main {
   }
 
   .wellness-module__copy {
-    order: 1;
+    order: 0;
     width: 100%;
     padding-right: 0;
     text-align: center;
@@ -3489,8 +3489,9 @@ main {
   .wellness-module__device {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 4px;
+    justify-content: space-between;
+    padding: 0 16px;
+    order: 1;
   }
   .wm-arrow {
     display: block;
