@@ -2577,7 +2577,7 @@ main {
   .section.faq,
   .section.plans,
   .section.beliefs {
-    width: calc(100% - 64px);
+    width: calc(100% - 48px);
   }
 
   .grow__cell {
@@ -2640,7 +2640,7 @@ main {
   .lifestyle__track {
     height: 64vh;
     gap: 12px;
-    padding: 0 32px;
+    padding: 0 24px;
   }
 
   .dashboard {
