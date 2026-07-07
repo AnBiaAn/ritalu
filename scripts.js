@@ -1,3 +1,12 @@
+// Always load at the top (disable browser scroll-restoration on reload),
+// unless the URL points to a specific section (#anchor).
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+window.addEventListener("pageshow", () => {
+  if (!location.hash) window.scrollTo(0, 0);
+});
+
 const revealItems = document.querySelectorAll(".reveal");
 
 const revealObserver = new IntersectionObserver(

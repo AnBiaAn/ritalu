@@ -3435,3 +3435,16 @@ main {
     font-size: 17px;
   }
 }
+
+/* ---------- Mobile: hero text pure white ---------- */
+@media (max-width: 640px) {
+  .hero__copy p.hero__eyebrow {
+    color: #fff;
+    opacity: 1;
+  }
+  .hero h1,
+  .hero h1 em,
+  .hero__copy p {
+    color: #fff;
+  }
+}
