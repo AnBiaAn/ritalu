@@ -2785,16 +2785,16 @@ main {
   }
 
   .wellness-module__copy {
-    order: 0;
-    width: 100%;
-    padding-right: 0;
-    text-align: center;
+    display: contents;
   }
 
   .wellness-module__copy p {
+    order: 2;
+    width: 100%;
     max-width: none;
-    margin: 0 auto;
+    margin: 8px auto 0;
     font-size: 17px;
+    text-align: center;
   }
 
   .wellness-module__dots {
@@ -2807,11 +2807,12 @@ main {
   }
 
   .wellness-module__copy h2 {
+    order: 0;
     width: 100%;
     max-width: none;
     font-size: 24px;
     text-align: center;
-    margin-bottom: 10px;
+    margin: 0 auto 4px;
   }
 
   .wellness-module__copy h2.heading--serif {
