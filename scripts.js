@@ -211,7 +211,9 @@ function setWellnessStep(index) {
     });
   }
 
+  const wellnessDevice = document.querySelector(".wellness-module__device");
   wellnessCopy.classList.add("is-changing");
+  if (wellnessDevice) wellnessDevice.classList.add("is-changing");
   wellnessAppEls.forEach((a) => a.classList.add("is-changing"));
   window.setTimeout(() => {
     wellnessTitle.textContent = wellnessSteps[index].title;
@@ -219,8 +221,9 @@ function setWellnessStep(index) {
     if (wellnessApp[index]) paintWellnessApp(wellnessApp[index]);
     applyWellnessScreen(index);
     wellnessCopy.classList.remove("is-changing");
+    if (wellnessDevice) wellnessDevice.classList.remove("is-changing");
     wellnessAppEls.forEach((a) => a.classList.remove("is-changing"));
-  }, 140);
+  }, 190);
 }
 
 function updateWellnessStory() {

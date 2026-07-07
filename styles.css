@@ -2851,7 +2851,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 6px;
-    margin-top: 16px;
+    margin-top: 6px;
   }
 
   .wm-dot {
@@ -3597,4 +3597,13 @@ main {
     border-radius: 16px 0 0 16px;
     padding: 8px 0 14px 12px;
   }
+}
+
+
+/* ---------- Module 3: soft cross-fade on screen change ---------- */
+.phone-device__img {
+  transition: opacity 340ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.wellness-module__device.is-changing .phone-device__img {
+  opacity: 0.25;
 }
