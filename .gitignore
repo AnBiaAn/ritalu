@@ -1,0 +1,10 @@
+# OS
+.DS_Store
+**/.DS_Store
+
+# Source assets / drafts not needed for the live site
+Module_5/
+alt*.html
+alt*.css
+alt*.js
+*.md
