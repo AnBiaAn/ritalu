@@ -2829,10 +2829,11 @@ main {
 
   .phone-device {
     width: min(258px, 62vw);
+    filter: drop-shadow(0 18px 38px rgba(20, 14, 8, 0.28));
   }
 
   .wellness-module__copy {
-    order: 1;
+    order: 2;
     width: 100%;
     padding-right: 0;
     text-align: center;
@@ -2845,7 +2846,29 @@ main {
   }
 
   .wellness-module__dots {
-    display: none;
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+  }
+
+  .wm-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(30, 24, 20, 0.25);
+    cursor: pointer;
+    transition: width 280ms ease, background 280ms ease, border-radius 280ms ease;
+  }
+
+  .wm-dot.is-active {
+    width: 20px;
+    border-radius: 999px;
+    background: rgba(30, 24, 20, 0.85);
   }
 
   .wellness-module__copy p {
@@ -3527,7 +3550,7 @@ main {
   }
 }
 
-/* ---------- Module 3 side arrows (mobile only) ---------- */
+/* ---------- Module 3 phone (mobile, no arrows) ---------- */
 .wm-arrow {
   display: none;
 }
@@ -3536,32 +3559,8 @@ main {
   .wellness-module__device {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 8px;
+    justify-content: center;
     order: 0;
-  }
-  .wm-arrow {
-    display: block;
-    flex: 0 0 auto;
-    z-index: 3;
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    border: 0;
-    background: none;
-    color: #fff;
-    cursor: pointer;
-    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
-    transition: transform 200ms ease;
-  }
-  .wm-arrow:active {
-    transform: scale(0.9);
-  }
-  .wm-arrow svg {
-    display: block;
-    width: 30px;
-    height: 30px;
-    fill: currentColor;
   }
 }
 

@@ -712,23 +712,13 @@ if (applyModal) {
     }, { passive: true });
     phone.addEventListener("touchend", (e) => {
       if (startX === null) return;
-      // ignore taps that land on the side arrows (they have their own handler)
-      if (e.target.closest(".wm-arrow")) { startX = startY = null; return; }
       const dx = e.changedTouches[0].clientX - startX;
       const dy = e.changedTouches[0].clientY - startY;
       if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
         stepBy(dx < 0 ? 1 : -1); // swipe left = next, right = previous
-        moved = true;
-      } else if (Math.abs(dx) < 12 && Math.abs(dy) < 12) {
-        stepBy(1); // tap on the screen = next
       }
       startX = startY = null;
     }, { passive: true });
-    // tap for non-touch / fallback (ignored right after a swipe)
-    phone.addEventListener("click", () => {
-      if (!moved) return;
-      moved = false;
-    });
   }
 })();
 
