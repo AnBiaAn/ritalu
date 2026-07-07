@@ -3595,8 +3595,8 @@ main {
 @media (max-width: 640px) {
   .compare__wrap {
     background: #f3f2ef;
-    border-radius: 16px 0 0 16px;
-    padding: 8px 0 14px 12px;
+    border-radius: 16px;
+    padding: 8px 12px 14px;
   }
 }
 
