@@ -3490,7 +3490,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 16px;
+    padding: 0 8px;
     order: 1;
   }
   .wm-arrow {
