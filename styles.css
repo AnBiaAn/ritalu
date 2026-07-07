@@ -2796,9 +2796,9 @@ main {
 
   .wellness-module__nav li {
     flex: 0 0 auto;
-    gap: 7px;
+    gap: 6px;
     border-radius: 10px;
-    padding: 7px 12px;
+    padding: 5px 10px;
     font-size: 12px;
     color: rgba(255, 255, 255, 0.92);
     background: rgba(86, 80, 76, 0.38);
