@@ -1,10 +1,19 @@
-// Always load at the top (disable browser scroll-restoration on reload),
-// unless the URL points to a specific section (#anchor).
+// Always (re)load at the top: disable browser scroll-restoration, and clear any
+// lingering #hash (from tapping a nav link) so reload doesn't jump to a section.
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
-window.addEventListener("pageshow", () => {
-  if (!location.hash) window.scrollTo(0, 0);
+function forceScrollTop() {
+  if (location.hash) {
+    history.replaceState(null, "", location.pathname + location.search);
+  }
+  window.scrollTo(0, 0);
+}
+window.addEventListener("pageshow", forceScrollTop);
+window.addEventListener("load", () => {
+  forceScrollTop();
+  requestAnimationFrame(forceScrollTop);
+  window.setTimeout(forceScrollTop, 80);
 });
 
 const revealItems = document.querySelectorAll(".reveal");
