@@ -3588,3 +3588,12 @@ main {
     scroll-snap-align: center;
   }
 }
+
+/* ---------- Mobile: light grey backdrop behind the comparison table ---------- */
+@media (max-width: 640px) {
+  .compare__wrap {
+    background: #f3f2ef;
+    border-radius: 16px;
+    padding: 8px 12px 14px;
+  }
+}
