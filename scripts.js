@@ -201,6 +201,16 @@ function setWellnessStep(index) {
     layer.classList.toggle("is-active", layerIndex === index);
   });
 
+  // On mobile, keep the active category pill centered in the horizontal strip
+  const navWrap = document.querySelector(".wellness-module__nav");
+  const activeItem = wellnessNavItems[index];
+  if (navWrap && activeItem && navWrap.scrollWidth > navWrap.clientWidth + 4) {
+    navWrap.scrollTo({
+      left: activeItem.offsetLeft - navWrap.clientWidth / 2 + activeItem.clientWidth / 2,
+      behavior: "smooth",
+    });
+  }
+
   wellnessCopy.classList.add("is-changing");
   wellnessAppEls.forEach((a) => a.classList.add("is-changing"));
   window.setTimeout(() => {
