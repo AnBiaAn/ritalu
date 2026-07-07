@@ -17,11 +17,15 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
-  overflow-x: clip;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 body {
-  overflow-x: clip;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -1347,10 +1351,24 @@ main {
 
 .grow__cell {
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.grow__media {
+  position: relative;
   aspect-ratio: 1.02 / 1;
   border-radius: 10px;
   overflow: hidden;
   isolation: isolate;
+}
+
+.grow__desc {
+  margin: 12px 4px 0;
+  color: #6b6a64;
+  font-family: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
 }
 
 .grow__cell--photo img {
@@ -1391,7 +1409,7 @@ main {
 
 .grow__overlay h3 {
   margin: 0 0 10px;
-  font-size: clamp(22px, 2vw, 28px);
+  font-size: clamp(24px, 2.2vw, 30px);
   line-height: 1.05;
   font-weight: 500;
 }
@@ -2591,8 +2609,16 @@ main {
   }
 
   .grow__cell {
-    height: 64vh;
+    height: auto;
     aspect-ratio: auto;
+  }
+
+  .grow__media {
+    aspect-ratio: 1.1 / 1;
+  }
+
+  .grow__desc {
+    font-size: 16px;
   }
 
   .steps,
@@ -2700,8 +2726,16 @@ main {
   }
 
   .grow__cell {
-    height: 64vh;
+    height: auto;
     aspect-ratio: auto;
+  }
+
+  .grow__media {
+    aspect-ratio: 1.1 / 1;
+  }
+
+  .grow__desc {
+    font-size: 16px;
   }
 
   .section {
