@@ -3490,41 +3490,29 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 4px;
   }
   .wm-arrow {
-    display: grid;
-    place-items: center;
+    display: block;
     flex: 0 0 auto;
     z-index: 3;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     padding: 0;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    background: rgba(255, 255, 255, 0.2);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    border: 0;
+    background: none;
     color: #fff;
     cursor: pointer;
-    transition: background 200ms ease, transform 200ms ease;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+    transition: transform 200ms ease;
   }
   .wm-arrow:active {
-    transform: scale(0.92);
-    background: rgba(255, 255, 255, 0.32);
-  }
-  .wm-arrow--prev {
-    margin-right: -18px;
-  }
-  .wm-arrow--next {
-    margin-left: -18px;
+    transform: scale(0.9);
   }
   .wm-arrow svg {
-    width: 18px;
-    height: 18px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    display: block;
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
   }
 }
