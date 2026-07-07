@@ -2658,6 +2658,7 @@ main {
   .beliefs__panel {
     aspect-ratio: auto;
     height: 64vh;
+    padding: 24px;
   }
 
   .faq {
