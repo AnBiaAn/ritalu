@@ -2557,6 +2557,10 @@ main {
     font-size: 12px;
   }
 
+  .hero__eyebrow-2 {
+    display: block;
+  }
+
   .hero__copy p {
     max-width: none;
     font-size: 16px;
