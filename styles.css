@@ -2771,6 +2771,7 @@ main {
   .wellness-module__copy {
     order: 1;
     width: 100%;
+    padding-right: 0;
     text-align: center;
   }
 
