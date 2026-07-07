@@ -198,6 +198,7 @@ main {
 .nav__links a {
   text-decoration: none;
   color: inherit;
+  white-space: nowrap;
   opacity: 0.86;
   transition: opacity 0.2s ease;
 }
