@@ -697,6 +697,12 @@ if (applyModal) {
     updateDots();
   }
 
+  // Side arrows
+  const prevArrow = document.querySelector("[data-wm-prev]");
+  const nextArrow = document.querySelector("[data-wm-next]");
+  if (prevArrow) prevArrow.addEventListener("click", () => stepBy(-1));
+  if (nextArrow) nextArrow.addEventListener("click", () => stepBy(1));
+
   if (phone) {
     let startX = null, startY = null, moved = false;
     phone.addEventListener("touchstart", (e) => {
@@ -706,6 +712,8 @@ if (applyModal) {
     }, { passive: true });
     phone.addEventListener("touchend", (e) => {
       if (startX === null) return;
+      // ignore taps that land on the side arrows (they have their own handler)
+      if (e.target.closest(".wm-arrow")) { startX = startY = null; return; }
       const dx = e.changedTouches[0].clientX - startX;
       const dy = e.changedTouches[0].clientY - startY;
       if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
