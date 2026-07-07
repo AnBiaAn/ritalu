@@ -2663,6 +2663,7 @@ main {
   .faq {
     grid-template-columns: 1fr;
     gap: 28px;
+    padding-left: 28px;
   }
 
   .faq__intro {
