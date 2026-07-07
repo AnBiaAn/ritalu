@@ -695,3 +695,22 @@ if (applyModal) {
     });
   }
 })();
+
+/* ---------- Hero video: force muted autoplay (mobile/iOS) ---------- */
+(function () {
+  const v = document.querySelector(".hero__image");
+  if (!v || v.tagName !== "VIDEO") return;
+  v.muted = true;
+  v.setAttribute("muted", "");
+  v.playsInline = true;
+  const tryPlay = () => {
+    const p = v.play();
+    if (p && typeof p.catch === "function") p.catch(() => {});
+  };
+  tryPlay();
+  // retry when the tab becomes visible or on first user interaction (iOS Low Power Mode)
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) tryPlay(); });
+  ["touchstart", "click"].forEach((evt) =>
+    document.addEventListener(evt, tryPlay, { once: true, passive: true })
+  );
+})();

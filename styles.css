@@ -2534,6 +2534,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    min-height: calc(100svh - 58px + 80px);
   }
 
   .hero__copy {
