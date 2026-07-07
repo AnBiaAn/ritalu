@@ -2632,7 +2632,7 @@ main {
 
   .grow__grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 44px;
   }
 
   .plans {
