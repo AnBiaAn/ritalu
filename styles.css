@@ -1351,24 +1351,30 @@ main {
 
 .grow__cell {
   position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.grow__media {
-  position: relative;
   aspect-ratio: 1.02 / 1;
   border-radius: 10px;
   overflow: hidden;
   isolation: isolate;
 }
 
+.grow__media {
+  position: absolute;
+  inset: 0;
+}
+
 .grow__desc {
-  margin: 12px 4px 0;
-  color: #6b6a64;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  margin: 0;
+  padding: 0 clamp(24px, 3vw, 40px) clamp(24px, 3vw, 40px);
+  color: rgba(255, 255, 255, 0.82);
   font-family: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 16px;
+  line-height: 1.42;
+  max-width: 40ch;
 }
 
 .grow__cell--photo img {
@@ -1397,12 +1403,12 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: clamp(24px, 3vw, 40px);
+  padding: clamp(24px, 3vw, 40px) clamp(24px, 3vw, 40px) 96px;
   background: linear-gradient(
     to top,
-    rgba(10, 8, 6, 0.5) 0%,
-    rgba(10, 8, 6, 0.1) 46%,
-    rgba(10, 8, 6, 0) 68%
+    rgba(10, 8, 6, 0.64) 0%,
+    rgba(10, 8, 6, 0.18) 54%,
+    rgba(10, 8, 6, 0) 78%
   );
   color: #fff;
 }
@@ -2612,13 +2618,30 @@ main {
   .grow__cell {
     height: auto;
     aspect-ratio: auto;
+    overflow: visible;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .grow__media {
+    position: relative;
+    inset: auto;
     aspect-ratio: 1.1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .grow__overlay {
+    padding: 24px;
   }
 
   .grow__desc {
+    position: static;
+    margin: 12px 4px 0;
+    padding: 0;
+    max-width: none;
+    color: #6b6a64;
     font-size: 16px;
   }
 
@@ -2730,13 +2753,30 @@ main {
   .grow__cell {
     height: auto;
     aspect-ratio: auto;
+    overflow: visible;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .grow__media {
+    position: relative;
+    inset: auto;
     aspect-ratio: 1.1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .grow__overlay {
+    padding: 24px;
   }
 
   .grow__desc {
+    position: static;
+    margin: 12px 4px 0;
+    padding: 0;
+    max-width: none;
+    color: #6b6a64;
     font-size: 16px;
   }
 
