@@ -1372,9 +1372,9 @@ main {
   padding: 0 clamp(24px, 3vw, 40px) clamp(24px, 3vw, 40px);
   color: rgba(255, 255, 255, 0.82);
   font-family: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.42;
-  max-width: 40ch;
+  font-size: 15px;
+  line-height: 1.4;
+  max-width: none;
 }
 
 .grow__cell--photo img {
@@ -1403,7 +1403,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: clamp(24px, 3vw, 40px) clamp(24px, 3vw, 40px) 96px;
+  padding: clamp(24px, 3vw, 40px) clamp(24px, 3vw, 40px) 78px;
   background: linear-gradient(
     to top,
     rgba(10, 8, 6, 0.64) 0%,
