@@ -3715,3 +3715,57 @@ main {
 .wellness-module__device.is-changing .phone-device__img {
   opacity: 0.25;
 }
+
+/* ---------- Waitlist: qualifying select, founding price, referral share ---------- */
+.waitlist-select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23888' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+.waitlist-select:required:invalid {
+  color: rgba(20, 16, 12, 0.45);
+}
+
+.plans__price .plans__per {
+  font-size: 0.4em;
+  font-style: normal;
+  font-weight: 500;
+  opacity: 0.7;
+}
+.plans__price s {
+  opacity: 0.55;
+}
+
+.waitlist-share {
+  margin-top: 16px;
+  text-align: center;
+}
+.waitlist-share__label {
+  margin: 0 0 8px;
+  font-size: 13px;
+  opacity: 0.55;
+}
+.waitlist-share__btns {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.waitlist-share__btns button {
+  flex: 1;
+  padding: 11px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(20, 16, 12, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.waitlist-share__btns button:hover {
+  border-color: rgba(20, 16, 12, 0.32);
+}

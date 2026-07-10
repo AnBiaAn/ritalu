@@ -588,6 +588,12 @@ if (applyModal) {
 
   function openModal(e) {
     if (e) e.preventDefault();
+    const src =
+      e && e.currentTarget
+        ? e.currentTarget.getAttribute("data-cta") ||
+          (e.currentTarget.className || "").split(" ")[0]
+        : "unknown";
+    if (window.ritTrack) ritTrack("waitlist_open", { source: src });
     lastFocused = document.activeElement;
     stepForm.hidden = false;
     stepThanks.hidden = true;
@@ -625,13 +631,54 @@ if (applyModal) {
         emailInput.focus();
         return;
       }
-      // TODO: send { name, email } to your email backend here
-      // (Formspree / Tally / Mailchimp / your API). Example:
-      // fetch("https://formspree.io/f/XXXX", { method: "POST", body: new FormData(form) });
+      const intentEl = form.querySelector('[name="intent"]');
+      const intent = intentEl ? intentEl.value : "";
+      if (window.ritTrack) ritTrack("waitlist_submit", { intent: intent || "n/a" });
+      // Optional: also POST the email to a form backend if configured
+      const endpoint = (window.RITALU && window.RITALU.waitlistEndpoint) || "";
+      if (endpoint) {
+        try {
+          fetch(endpoint, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(form) });
+        } catch (err) {}
+      }
       stepForm.hidden = true;
       stepThanks.hidden = false;
     });
   }
+
+  // 6-question survey (Typeform/Tally) + referral share
+  const surveyLink = modal.querySelector("[data-survey-link]");
+  const surveyUrl = (window.RITALU && window.RITALU.surveyUrl) || "";
+  if (surveyLink) {
+    if (surveyUrl) surveyLink.href = surveyUrl;
+    surveyLink.addEventListener("click", () => {
+      if (window.ritTrack) ritTrack("survey_click", {});
+    });
+  }
+
+  const shareUrl = "https://www.ritalu.xyz/";
+  const shareText =
+    "I just joined the Ritalu waitlist — one private space that turns your cycle, sleep and nutrition into what to focus on today. Join me:";
+  modal.querySelectorAll("[data-share]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const kind = btn.getAttribute("data-share");
+      if (window.ritTrack) ritTrack("referral_share", { channel: kind });
+      if (kind === "whatsapp") {
+        window.open("https://wa.me/?text=" + encodeURIComponent(shareText + " " + shareUrl), "_blank", "noopener");
+      } else if (kind === "x") {
+        window.open(
+          "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(shareUrl),
+          "_blank",
+          "noopener"
+        );
+      } else if (kind === "copy") {
+        if (navigator.clipboard) navigator.clipboard.writeText(shareUrl);
+        const prev = btn.textContent;
+        btn.textContent = "Copied!";
+        window.setTimeout(() => (btn.textContent = prev), 1500);
+      }
+    });
+  });
 })();
 
 /* ---------- Mobile menu ---------- */

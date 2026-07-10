@@ -16,7 +16,62 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,700&family=DM+Sans:wght@400&family=Inter:wght@400&family=Instrument+Sans:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260708-87" />
+    <link rel="stylesheet" href="styles.css?v=20260710-89" />
+
+    <!-- Open Graph / Twitter (how the link looks when shared or run as an ad) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ritalu" />
+    <meta property="og:title" content="Ritalu — Understand your body, day by day" />
+    <meta property="og:description" content="Your cycle, sleep, nutrition, biomarkers and fitness in one private system that tells you what to focus on today." />
+    <meta property="og:url" content="https://www.ritalu.xyz/" />
+    <meta property="og:image" content="https://www.ritalu.xyz/assets/og-image.jpg?v=1" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ritalu — Understand your body, day by day" />
+    <meta name="twitter:description" content="Your cycle, sleep, nutrition, biomarkers and fitness in one private system that tells you what to focus on today." />
+    <meta name="twitter:image" content="https://www.ritalu.xyz/assets/og-image.jpg?v=1" />
+
+    <!-- ============================================================
+         MARKETING CONFIG — paste your IDs/URLs here, then re-deploy.
+         Everything works with blanks; tracking simply stays off.
+         ============================================================ -->
+    <script>
+      window.RITALU = {
+        ga4Id: "",           // Google Analytics 4, e.g. "G-XXXXXXX"
+        metaPixelId: "",     // Meta/Instagram Ads pixel, e.g. "1234567890"
+        tiktokPixelId: "",   // TikTok Ads pixel, e.g. "CXXXXXXXXXXXXX"
+        surveyUrl: "https://form.typeform.com/to/XXXXXXXX", // your Typeform (email + 6 questions + referral)
+        waitlistEndpoint: "" // optional Formspree/Getform URL to also POST the email to; leave "" to skip
+      };
+    </script>
+    <script>
+      (function () {
+        var C = window.RITALU || {};
+        if (C.ga4Id) {
+          var s = document.createElement("script");
+          s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + C.ga4Id;
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () { dataLayer.push(arguments); };
+          gtag("js", new Date()); gtag("config", C.ga4Id);
+        }
+        if (C.metaPixelId) {
+          !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+          fbq("init", C.metaPixelId); fbq("track", "PageView");
+        }
+        if (C.tiktokPixelId) {
+          !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=d.createElement("script");o.type="text/javascript";o.async=!0;o.src=i+"?sdkid="+e+"&lib="+t;var a=d.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};ttq.load(C.tiktokPixelId);ttq.page()}(window,document,"ttq");
+        }
+        window.ritTrack = function (name, params) {
+          params = params || {};
+          try { if (window.gtag) gtag("event", name, params); } catch (e) {}
+          try { if (window.fbq) fbq("trackCustom", name, params); } catch (e) {}
+          try { if (window.ttq) ttq.track(name, params); } catch (e) {}
+          if (!C.ga4Id && !C.metaPixelId && !C.tiktokPixelId) { try { console.debug("[ritTrack]", name, params); } catch (e) {} }
+        };
+      })();
+    </script>
   </head>
   <body>
     <header class="site-nav" data-nav>
@@ -407,10 +462,10 @@
             <li>Special founding member pricing at launch</li>
           </ul>
           <div class="plans__price">
-            <b>Free</b>
-            <span><em>to join</em><small>Founding-member pricing at launch</small></span>
+            <b>$8<em class="plans__per">/mo</em></b>
+            <span><em>founding rate</em><small><s>$16/mo</s> locked in for life &middot; nothing now, billed only at launch</small></span>
           </div>
-          <a class="plans__button" href="#membership">Join the Waitlist</a>
+          <a class="plans__button" href="#membership" data-cta="pricing">Reserve your founding spot</a>
           <div class="plans__badges">
             <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7" /></svg>1,000+ women applied</span>
             <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7" /></svg>No payment to join</span>
@@ -617,6 +672,12 @@
           <form class="waitlist-form" data-waitlist-form novalidate>
             <input class="waitlist-input" type="text" name="name" placeholder="First name" autocomplete="given-name" />
             <input class="waitlist-input" type="email" name="email" placeholder="Email address" autocomplete="email" required />
+            <select class="waitlist-input waitlist-select" name="intent" required>
+              <option value="" disabled selected>Would you pay $8/mo at launch?</option>
+              <option value="yes">Yes, I&rsquo;d pay for this</option>
+              <option value="maybe">Maybe, depends</option>
+              <option value="no">No, only if free</option>
+            </select>
             <button class="waitlist-submit" type="submit">Join the waitlist</button>
           </form>
           <p class="waitlist-modal__fine">Private by design &middot; Unsubscribe anytime</p>
@@ -628,12 +689,20 @@
           </div>
           <h2 class="waitlist-modal__title">You&rsquo;re on the list</h2>
           <p class="waitlist-modal__sub">Want Ritalu built around <em>you</em>? Answer 6 quick questions and we&rsquo;ll move you up the list.</p>
-          <a class="waitlist-submit" href="#" data-survey-link>Take the 6-question survey</a>
+          <a class="waitlist-submit" href="#" data-survey-link target="_blank" rel="noopener">Take the 6-question survey</a>
+          <div class="waitlist-share">
+            <p class="waitlist-share__label">Or skip the line &mdash; invite a friend</p>
+            <div class="waitlist-share__btns">
+              <button type="button" data-share="whatsapp">WhatsApp</button>
+              <button type="button" data-share="x">X</button>
+              <button type="button" data-share="copy" data-share-copy>Copy link</button>
+            </div>
+          </div>
           <button class="waitlist-skip" type="button" data-waitlist-close>Maybe later</button>
         </div>
       </div>
     </div>
 
-    <script src="scripts.js?v=20260707-78"></script>
+    <script src="scripts.js?v=20260710-89"></script>
   </body>
 </html>
