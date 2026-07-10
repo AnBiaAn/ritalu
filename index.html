@@ -72,6 +72,100 @@
         };
       })();
     </script>
+
+    <!-- Structured data: entity clarity + FAQ rich results for Google & AI answer engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.ritalu.xyz/#organization",
+          "name": "Ritalu",
+          "url": "https://www.ritalu.xyz/",
+          "logo": "https://www.ritalu.xyz/assets/favicon.png",
+          "description": "Ritalu is a private operating system for women's well-being that brings cycle, sleep, nutrition, biomarkers, fitness, and daily habits into one place.",
+          "sameAs": ["https://www.instagram.com/ritalu_xyz/"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.ritalu.xyz/#website",
+          "name": "Ritalu",
+          "url": "https://www.ritalu.xyz/",
+          "publisher": { "@id": "https://www.ritalu.xyz/#organization" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Ritalu",
+          "applicationCategory": "LifestyleApplication",
+          "operatingSystem": "iOS, Android, Web",
+          "url": "https://www.ritalu.xyz/",
+          "description": "A private wellness app for women that connects your cycle, sleep, nutrition, biomarkers, and fitness and turns them into a personal daily brief on what to focus on.",
+          "offers": {
+            "@type": "Offer",
+            "price": "8",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/PreOrder"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Ritalu?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Ritalu is an operating system for women's well-being — one private platform that brings your cycle, sleep, nutrition, biomarkers, fitness, and daily habits together and turns them into simple, personal guidance, so you can understand your body and act with context." }
+            },
+            {
+              "@type": "Question",
+              "name": "Who is Ritalu for?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Women who want to understand their body over time — especially anyone tired of juggling separate apps for cycle, sleep, nutrition, and labs, and who wants one clear picture instead of scattered data." }
+            },
+            {
+              "@type": "Question",
+              "name": "How is Ritalu different from Flo, Clue, or my Oura ring?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Each of those does one thing — a period app logs your cycle, a wearable measures sleep or recovery. Ritalu connects them: it brings your cycle, wearables, labs, and daily habits into one place and turns them into a single daily read on what to focus on — something no single app or device does on its own." }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the daily guidance work?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Each day, Ritalu reads your cycle phase and recent signals — sleep, energy, and more — and gives you a short, personal brief on what to prioritize: how to move, eat, and recover that day. The more you use it, the more tailored it gets." }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Ritalu a medical or diagnostic tool?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. Ritalu is a wellness and self-knowledge tool, not a medical device — it doesn't diagnose, treat, or replace your doctor. It helps you understand your own patterns and make everyday decisions with more context." }
+            },
+            {
+              "@type": "Question",
+              "name": "How is my data protected?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Your data is encrypted and always under your control. We never sell it. You decide what to connect, and you can export or delete everything at any time." }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Ritalu available now?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Ritalu is in early access. Join the waitlist and we'll invite you as we open spots in each cohort." }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need labs or a wearable to begin?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. You can start with a guided profile today and connect labs, wearables, and daily check-ins whenever you're ready — your insights grow richer as you add more." }
+            },
+            {
+              "@type": "Question",
+              "name": "What will I be able to do at launch?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Connect labs and wearables, see your cycle, sleep, nutrition, and biomarkers in one dashboard, get cycle-aware daily guidance, and ask an AI companion about your body and patterns." }
+            },
+            {
+              "@type": "Question",
+              "name": "What does it cost?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Joining the waitlist is free, with nothing charged now. Founding members lock in $8/mo — half the planned $16 — billed only when Ritalu launches." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <header class="site-nav" data-nav>
@@ -509,17 +603,65 @@
             </button>
             <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1">
               <div class="faq__a-inner">
-                <p>Ritalu is an operating system for women&rsquo;s well-being &mdash; one private platform that brings your cycle, sleep, nutrition, biomarkers, fitness, and daily habits together so you can understand your body and act with context.</p>
+                <p>Ritalu is an operating system for women&rsquo;s well-being &mdash; one private platform that brings your cycle, sleep, nutrition, biomarkers, fitness, and daily habits together and turns them into simple, personal guidance, so you can understand your body and act with context.</p>
               </div>
             </div>
           </div>
 
           <div class="faq__item">
             <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
-              How is my data protected?
+              Who is Ritalu for?
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
             <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2">
+              <div class="faq__a-inner">
+                <p>Women who want to understand their body over time &mdash; especially anyone tired of juggling separate apps for cycle, sleep, nutrition, and labs, and who wants one clear picture instead of scattered data.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+              How is Ritalu different from Flo, Clue, or my Oura ring?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3">
+              <div class="faq__a-inner">
+                <p>Each of those does one thing &mdash; a period app logs your cycle, a wearable measures sleep or recovery. Ritalu connects them: it brings your cycle, wearables, labs, and daily habits into one place and turns them into a single daily read on what to focus on &mdash; something no single app or device does on its own.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+              How does the daily guidance work?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4">
+              <div class="faq__a-inner">
+                <p>Each day, Ritalu reads your cycle phase and recent signals &mdash; sleep, energy, and more &mdash; and gives you a short, personal brief on what to prioritize: how to move, eat, and recover that day. The more you use it, the more tailored it gets.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+              Is Ritalu a medical or diagnostic tool?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5">
+              <div class="faq__a-inner">
+                <p>No. Ritalu is a wellness and self-knowledge tool, not a medical device &mdash; it doesn&rsquo;t diagnose, treat, or replace your doctor. It helps you understand your own patterns and make everyday decisions with more context.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+              How is my data protected?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6">
               <div class="faq__a-inner">
                 <p>Your data is encrypted and always under your control. We never sell it. You decide what to connect, and you can export or delete everything at any time.</p>
               </div>
@@ -527,11 +669,11 @@
           </div>
 
           <div class="faq__item">
-            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">
               Is Ritalu available now?
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
-            <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            <div class="faq__a" id="faq-a7" role="region" aria-labelledby="faq-q7">
               <div class="faq__a-inner">
                 <p>Ritalu is in early access. Join the waitlist and we&rsquo;ll invite you as we open spots in each cohort.</p>
               </div>
@@ -539,11 +681,11 @@
           </div>
 
           <div class="faq__item">
-            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">
               Do I need labs or a wearable to begin?
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
-            <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4">
+            <div class="faq__a" id="faq-a8" role="region" aria-labelledby="faq-q8">
               <div class="faq__a-inner">
                 <p>No. You can start with a guided profile today and connect labs, wearables, and daily check-ins whenever you&rsquo;re ready &mdash; your insights grow richer as you add more.</p>
               </div>
@@ -551,25 +693,25 @@
           </div>
 
           <div class="faq__item">
-            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">
               What will I be able to do at launch?
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
-            <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5">
+            <div class="faq__a" id="faq-a9" role="region" aria-labelledby="faq-q9">
               <div class="faq__a-inner">
-                <p>Connect labs and wearables, see your cycle, sleep, nutrition, and biomarkers in one dashboard, get cycle-aware daily guidance, and ask an AI companion about your health.</p>
+                <p>Connect labs and wearables, see your cycle, sleep, nutrition, and biomarkers in one dashboard, get cycle-aware daily guidance, and ask an AI companion about your body and patterns.</p>
               </div>
             </div>
           </div>
 
           <div class="faq__item">
-            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+            <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a10" id="faq-q10">
               What does it cost?
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
-            <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6">
+            <div class="faq__a" id="faq-a10" role="region" aria-labelledby="faq-q10">
               <div class="faq__a-inner">
-                <p>Nothing to join the waitlist. We&rsquo;ll share pricing with early members before launch, and founding members get the best terms.</p>
+                <p>Joining the waitlist is free, with nothing charged now. Founding members lock in $8/mo &mdash; half the planned $16 &mdash; billed only when Ritalu launches.</p>
               </div>
             </div>
           </div>
