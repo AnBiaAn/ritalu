@@ -792,3 +792,21 @@ if (applyModal) {
     document.addEventListener(evt, tryPlay, { once: true, passive: true })
   );
 })();
+
+/* ---------- Our Beliefs: looping video (muted autoplay + pause off-screen) ---------- */
+(function () {
+  const v = document.querySelector(".beliefs__video");
+  if (!v || v.tagName !== "VIDEO") return;
+  v.muted = true;
+  const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => (e.isIntersecting ? tryPlay() : v.pause())),
+      { threshold: 0.2 }
+    );
+    io.observe(v);
+  } else {
+    tryPlay();
+  }
+  document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+})();

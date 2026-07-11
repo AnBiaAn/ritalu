@@ -3769,3 +3769,15 @@ main {
 .waitlist-share__btns button:hover {
   border-color: rgba(20, 16, 12, 0.32);
 }
+
+/* ---------- Our Beliefs: looping background video ---------- */
+.beliefs__photo video,
+.beliefs__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
