@@ -665,9 +665,9 @@ if (applyModal) {
       if (window.ritTrack) ritTrack("referral_share", { channel: kind });
       if (kind === "whatsapp") {
         window.open("https://wa.me/?text=" + encodeURIComponent(shareText + " " + shareUrl), "_blank", "noopener");
-      } else if (kind === "x") {
+      } else if (kind === "telegram") {
         window.open(
-          "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(shareUrl),
+          "https://t.me/share/url?url=" + encodeURIComponent(shareUrl) + "&text=" + encodeURIComponent(shareText),
           "_blank",
           "noopener"
         );
@@ -676,7 +676,7 @@ if (applyModal) {
         const prev = btn.innerHTML;
         btn.classList.add("is-copied");
         btn.innerHTML =
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>';
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Copied!</span>';
         window.setTimeout(() => {
           btn.innerHTML = prev;
           btn.classList.remove("is-copied");
