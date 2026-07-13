@@ -673,9 +673,14 @@ if (applyModal) {
         );
       } else if (kind === "copy") {
         if (navigator.clipboard) navigator.clipboard.writeText(shareUrl);
-        const prev = btn.textContent;
-        btn.textContent = "Copied!";
-        window.setTimeout(() => (btn.textContent = prev), 1500);
+        const prev = btn.innerHTML;
+        btn.classList.add("is-copied");
+        btn.innerHTML =
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>';
+        window.setTimeout(() => {
+          btn.innerHTML = prev;
+          btn.classList.remove("is-copied");
+        }, 1500);
       }
     });
   });

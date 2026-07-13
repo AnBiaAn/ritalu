@@ -3781,3 +3781,21 @@ main {
   object-position: center;
   display: block;
 }
+
+/* ---------- Waitlist share buttons as icons ---------- */
+.waitlist-share__btns button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px;
+}
+.waitlist-share__btns button svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.waitlist-share__btns button.is-copied {
+  color: #2f7d33;
+  border-color: rgba(47, 125, 51, 0.45);
+}
