@@ -3845,3 +3845,11 @@ main {
   background: #0b0b0b;
   color: #fff;
 }
+
+/* ---------- Ritalu logo inside the mobile menu (black) ---------- */
+.mobile-menu__logo {
+  height: 28px;
+  width: auto;
+  margin-bottom: 20px;
+  filter: brightness(0);
+}
