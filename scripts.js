@@ -633,12 +633,30 @@ if (applyModal) {
       }
       const intentEl = form.querySelector('[name="intent"]');
       const intent = intentEl ? intentEl.value : "";
+      const nameEl = form.querySelector('[name="name"]');
+      const name = nameEl ? nameEl.value.trim() : "";
       if (window.ritTrack) ritTrack("waitlist_submit", { intent: intent || "n/a" });
-      // Optional: also POST the email to a form backend if configured
+      // Send the signup to your Google Sheet (Apps Script web app) if configured
       const endpoint = (window.RITALU && window.RITALU.waitlistEndpoint) || "";
       if (endpoint) {
+        const q = new URLSearchParams(location.search);
+        const body = new URLSearchParams({
+          name: name,
+          email: email,
+          intent: intent || "",
+          utm_source: q.get("utm_source") || "",
+          utm_medium: q.get("utm_medium") || "",
+          utm_campaign: q.get("utm_campaign") || "",
+          referrer: document.referrer || "",
+          page: location.href,
+        });
         try {
-          fetch(endpoint, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(form) });
+          fetch(endpoint, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: body.toString(),
+          });
         } catch (err) {}
       }
       stepForm.hidden = true;
