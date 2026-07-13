@@ -742,6 +742,16 @@ if (applyModal) {
   const closeBtn = menu.querySelector("[data-mobile-close]");
 
   function openMenu() {
+    // Place the menu logo exactly over the real nav logo so it doesn't jump
+    const navLogo = document.querySelector(".logo img");
+    const menuLogo = menu.querySelector(".mobile-menu__logo");
+    if (navLogo && menuLogo) {
+      const r = navLogo.getBoundingClientRect();
+      menuLogo.style.top = r.top + "px";
+      menuLogo.style.left = r.left + "px";
+      menuLogo.style.width = r.width + "px";
+      menuLogo.style.height = r.height + "px";
+    }
     menu.classList.add("is-open");
     menu.setAttribute("aria-hidden", "false");
     btn.setAttribute("aria-expanded", "true");

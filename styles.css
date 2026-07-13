@@ -3853,21 +3853,10 @@ main {
 
 /* ---------- Ritalu logo inside the mobile menu (black) ---------- */
 .mobile-menu__logo {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: clamp(90px, 7.6vw, 112px);
+  position: fixed;
   height: auto;
   margin: 0;
   filter: brightness(0);
-}
-@media (max-width: 640px) {
-  .mobile-menu__logo {
-    top: 18px;
-    left: calc(clamp(16px, 5vw, 80px) + 20px);
-    transform: none;
-  }
 }
 
 /* ---------- Lifestyle gallery: mobile peek carousel + pagination dots ---------- */
@@ -3960,7 +3949,7 @@ main {
     display: block;
     width: 96px;
     height: 3px;
-    margin: 14px 0 0;
+    margin: 14px auto 0 0;
     border-radius: 999px;
     background: rgba(20, 16, 12, 0.12);
     overflow: hidden;
