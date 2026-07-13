@@ -636,22 +636,17 @@ if (applyModal) {
       const nameEl = form.querySelector('[name="name"]');
       const name = nameEl ? nameEl.value.trim() : "";
       if (window.ritTrack) ritTrack("waitlist_submit", { intent: intent || "n/a" });
-      // Send the signup to your Google Sheet (Apps Script web app) if configured
-      const endpoint = (window.RITALU && window.RITALU.waitlistEndpoint) || "";
-      if (endpoint) {
-        const q = new URLSearchParams(location.search);
-        const body = new URLSearchParams({
-          name: name,
-          email: email,
-          intent: intent || "",
-          utm_source: q.get("utm_source") || "",
-          utm_medium: q.get("utm_medium") || "",
-          utm_campaign: q.get("utm_campaign") || "",
-          referrer: document.referrer || "",
-          page: location.href,
-        });
+      // Send the signup to your Google Form -> Google Sheet
+      const gf = (window.RITALU && window.RITALU.googleForm) || null;
+      if (gf && gf.action) {
+        const intentText =
+          intentEl && intentEl.value ? intentEl.options[intentEl.selectedIndex].text : "";
+        const body = new URLSearchParams();
+        body.set(gf.name, name);
+        body.set(gf.email, email);
+        body.set(gf.intent, intentText);
         try {
-          fetch(endpoint, {
+          fetch(gf.action, {
             method: "POST",
             mode: "no-cors",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },

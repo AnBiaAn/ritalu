@@ -43,7 +43,14 @@
         metaPixelId: "",     // Meta/Instagram Ads pixel, e.g. "1234567890"
         tiktokPixelId: "",   // TikTok Ads pixel, e.g. "CXXXXXXXXXXXXX"
         surveyUrl: "https://form.typeform.com/to/XXXXXXXX", // your Typeform (email + 6 questions + referral)
-        waitlistEndpoint: "" // optional Formspree/Getform URL to also POST the email to; leave "" to skip
+        waitlistEndpoint: "", // optional Formspree/Getform URL to also POST the email to; leave "" to skip
+        // Google Form -> Google Sheet (waitlist signups)
+        googleForm: {
+          action: "https://docs.google.com/forms/d/e/1FAIpQLScjnIJdjdt7SF-nxEYYPFFTloNPpOIDget_KtjC98pvs83z8Q/formResponse",
+          name: "entry.82546677",
+          email: "entry.659448145",
+          intent: "entry.1961512946"
+        }
       };
     </script>
     <script>
@@ -845,6 +852,6 @@
       </div>
     </div>
 
-    <script src="scripts.js?v=20260713-94"></script>
+    <script src="scripts.js?v=20260713-95"></script>
   </body>
 </html>
