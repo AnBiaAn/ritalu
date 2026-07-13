@@ -830,3 +830,40 @@ if (applyModal) {
   }
   document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
 })();
+
+/* ---------- Lifestyle gallery: pagination dots synced to scroll (mobile) ---------- */
+(function () {
+  const track = document.querySelector(".lifestyle__track");
+  const dotsWrap = document.querySelector("[data-lifestyle-dots]");
+  if (!track || !dotsWrap) return;
+  const cards = Array.from(track.querySelectorAll(".lifestyle__card"));
+  if (!cards.length) return;
+  const dots = cards.map((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "lf-dot" + (i === 0 ? " is-active" : "");
+    b.setAttribute("aria-label", "Go to card " + (i + 1));
+    b.addEventListener("click", () => {
+      const left = cards[i].offsetLeft - (track.clientWidth - cards[i].offsetWidth) / 2;
+      track.scrollTo({ left: left, behavior: "smooth" });
+    });
+    dotsWrap.appendChild(b);
+    return b;
+  });
+  let raf = null;
+  function updateActive() {
+    const center = track.scrollLeft + track.clientWidth / 2;
+    let best = 0, bestDist = Infinity;
+    cards.forEach((card, i) => {
+      const c = card.offsetLeft + card.offsetWidth / 2;
+      const d = Math.abs(c - center);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    dots.forEach((d, i) => d.classList.toggle("is-active", i === best));
+  }
+  track.addEventListener("scroll", () => {
+    if (raf) return;
+    raf = requestAnimationFrame(() => { raf = null; updateActive(); });
+  }, { passive: true });
+  updateActive();
+})();
