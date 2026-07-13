@@ -3850,8 +3850,7 @@ main {
 .mobile-menu__logo {
   position: absolute;
   top: 18px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(clamp(16px, 5vw, 80px) + 20px);
   width: clamp(90px, 7.6vw, 112px);
   height: auto;
   margin: 0;
@@ -3864,7 +3863,7 @@ main {
 }
 @media (max-width: 640px) {
   .lifestyle__card {
-    width: min(300px, 80vw);
+    width: min(330px, 85vw);
   }
   .lifestyle__card img {
     width: 100%;
@@ -3876,7 +3875,7 @@ main {
   }
   .lifestyle__dots {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     gap: 6px;
     padding: 0 24px;
@@ -3910,13 +3909,14 @@ main {
   height: 42px;
   flex: 0 0 auto;
   border-radius: 50%;
-  background: #f5f5f5;
-  color: #1a1410;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .footer__share a svg {
   width: 19px;
@@ -3924,6 +3924,7 @@ main {
   display: block;
 }
 .footer__share a:hover {
-  background: #0b0b0b;
-  color: #fff;
+  background: #fff;
+  border-color: #fff;
+  color: #0b0b0b;
 }
