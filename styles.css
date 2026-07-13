@@ -3849,12 +3849,20 @@ main {
 /* ---------- Ritalu logo inside the mobile menu (black) ---------- */
 .mobile-menu__logo {
   position: absolute;
-  top: 18px;
-  left: calc(clamp(16px, 5vw, 80px) + 20px);
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   width: clamp(90px, 7.6vw, 112px);
   height: auto;
   margin: 0;
   filter: brightness(0);
+}
+@media (max-width: 640px) {
+  .mobile-menu__logo {
+    top: 18px;
+    left: calc(clamp(16px, 5vw, 80px) + 20px);
+    transform: none;
+  }
 }
 
 /* ---------- Lifestyle gallery: mobile peek carousel + pagination dots ---------- */
