@@ -1661,6 +1661,7 @@ main {
 
 .beliefs__nav {
   display: flex;
+  justify-content: flex-start;
   gap: 20px;
   margin-top: 26px;
 }
@@ -3177,6 +3178,10 @@ main {
     align-items: flex-start;
     justify-content: space-between;
     gap: 24px;
+    padding-bottom: 16px;
+  }
+  .footer__share {
+    margin-top: 20px;
   }
 
   .footer__cols {
@@ -3936,4 +3941,36 @@ main {
   background: #fff;
   border-color: #fff;
   color: #0b0b0b;
+}
+
+
+/* ---------- Compare table: last row line removed + mobile scroll indicator ---------- */
+.compare__table tbody tr:last-child th,
+.compare__table tbody tr:last-child td {
+  border-bottom: none;
+}
+.compare__scroll {
+  display: none;
+}
+@media (max-width: 640px) {
+  .beliefs__panel {
+    cursor: pointer;
+  }
+  .compare__scroll {
+    display: block;
+    width: 96px;
+    height: 3px;
+    margin: 14px 0 0;
+    border-radius: 999px;
+    background: rgba(20, 16, 12, 0.12);
+    overflow: hidden;
+  }
+  .compare__scroll-thumb {
+    display: block;
+    height: 100%;
+    width: 40px;
+    border-radius: 999px;
+    background: rgba(20, 16, 12, 0.6);
+    transition: transform 60ms linear;
+  }
 }
