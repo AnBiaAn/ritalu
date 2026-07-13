@@ -640,7 +640,9 @@ if (applyModal) {
       const gf = (window.RITALU && window.RITALU.googleForm) || null;
       if (gf && gf.action) {
         const intentText =
-          intentEl && intentEl.value ? intentEl.options[intentEl.selectedIndex].text : "";
+          intentEl && intentEl.value
+            ? intentEl.options[intentEl.selectedIndex].text.replace(/[‘’]/g, "'")
+            : "";
         const body = new URLSearchParams();
         body.set(gf.name, name);
         body.set(gf.email, email);
