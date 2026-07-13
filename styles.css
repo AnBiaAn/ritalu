@@ -3902,7 +3902,8 @@ main {
 .footer__share {
   display: flex;
   gap: 12px;
-  margin: 4px 0 32px;
+  width: 100%;
+  margin: 32px 0 0;
 }
 .footer__share a {
   width: 42px;
