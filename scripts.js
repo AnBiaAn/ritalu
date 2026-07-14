@@ -580,29 +580,6 @@ if (applyModal) {
   }
 })();
 
-/* ---------- Compare table: scroll-position indicator (mobile) ---------- */
-(function () {
-  const wrap = document.querySelector(".compare__wrap");
-  const track = document.querySelector(".compare__scroll");
-  const thumb = track && track.querySelector(".compare__scroll-thumb");
-  if (!wrap || !track || !thumb) return;
-  function update() {
-    const maxScroll = wrap.scrollWidth - wrap.clientWidth;
-    if (maxScroll <= 4) {
-      track.style.visibility = "hidden";
-      return;
-    }
-    track.style.visibility = "visible";
-    const trackW = track.clientWidth;
-    const thumbW = Math.max(24, (wrap.clientWidth / wrap.scrollWidth) * trackW);
-    const pos = (wrap.scrollLeft / maxScroll) * (trackW - thumbW);
-    thumb.style.width = thumbW + "px";
-    thumb.style.transform = "translateX(" + pos + "px)";
-  }
-  wrap.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
-  update();
-})();
 
 /* ---------- Waitlist modal ---------- */
 (function () {

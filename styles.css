@@ -3933,35 +3933,29 @@ main {
 }
 
 
-/* ---------- Compare table: last row line removed + mobile scroll indicator ---------- */
+/* ---------- Compare table: last row line removed + dark scrollbar ---------- */
 .compare__table tbody tr:last-child th,
 .compare__table tbody tr:last-child td {
   border-bottom: none;
-}
-.compare__scroll {
-  display: none;
 }
 @media (max-width: 640px) {
   .beliefs__panel {
     cursor: pointer;
   }
-  .compare__scroll {
-    display: block;
-    width: 96px;
-    height: 3px;
-    margin: 14px auto 0 0;
-    border-radius: 999px;
-    background: rgba(20, 16, 12, 0.12);
-    overflow: hidden;
-  }
-  .compare__scroll-thumb {
-    display: block;
-    height: 100%;
-    width: 40px;
-    border-radius: 999px;
-    background: rgba(20, 16, 12, 0.6);
-    transition: transform 60ms linear;
-  }
+}
+.compare__wrap {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(20, 16, 12, 0.4) transparent;
+}
+.compare__wrap::-webkit-scrollbar {
+  height: 6px;
+}
+.compare__wrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+.compare__wrap::-webkit-scrollbar-thumb {
+  background: rgba(20, 16, 12, 0.4);
+  border-radius: 999px;
 }
 
 /* ---------- Ritalu Gatherings (community / experiences) ---------- */
