@@ -3877,7 +3877,7 @@ main {
   }
   .lifestyle__dots {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     gap: 6px;
     padding: 0 24px;
