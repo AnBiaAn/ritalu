@@ -3999,6 +3999,10 @@ main {
   color: #fff;
   margin: 0 0 20px;
 }
+.gatherings__title em {
+  font-style: italic;
+  font-weight: 500;
+}
 .gatherings__sub {
   font-size: 18px;
   line-height: 1.5;
