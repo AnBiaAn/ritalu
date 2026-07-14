@@ -21,7 +21,9 @@
       body { margin: 0; font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif; color: var(--ink); background: #fff; line-height: 1.68; }
       .nav { padding: 22px clamp(20px, 5vw, 60px); border-bottom: 1px solid var(--line); }
       .nav a { font-weight: 500; text-decoration: none; color: var(--ink); font-size: 17px; }
-      article { max-width: 720px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) clamp(20px, 5vw, 40px) 100px; }
+      .lead-img { max-width: 1040px; margin: clamp(20px, 4vw, 40px) auto 0; padding: 0 clamp(0px, 3vw, 24px); }
+      .lead-img img { display: block; width: 100%; height: clamp(240px, 42vw, 480px); object-fit: cover; border-radius: clamp(14px, 2vw, 22px); }
+      article { max-width: 720px; margin: 0 auto; padding: clamp(24px, 4vw, 44px) clamp(20px, 5vw, 40px) 100px; }
       .kicker { text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; color: var(--muted); margin: 8px 0 14px; }
       h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(38px, 7vw, 60px); line-height: 1.04; margin: 0 0 16px; }
       .lede { font-size: 20px; color: #3a352f; margin: 0 0 28px; }
@@ -43,6 +45,9 @@
   </head>
   <body>
     <div class="nav"><a href="/">&larr; Ritalu</a></div>
+    <figure class="lead-img">
+      <img src="/assets/natural-rhythms.webp" alt="Living in natural rhythm with your cycle" loading="eager" decoding="async" />
+    </figure>
     <article>
       <p class="kicker">Cycle &amp; Rhythm</p>
       <h1>Cycle Syncing: How to Eat, Move &amp; Rest With Your Hormones</h1>
