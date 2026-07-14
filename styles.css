@@ -3976,9 +3976,9 @@ main {
   background: linear-gradient(rgba(24, 18, 12, 0.46), rgba(24, 18, 12, 0.46)), url("assets/gatherings-bg.webp?v=1") center / cover no-repeat;
   border-radius: 28px;
   text-align: center;
-  height: calc(100svh - 24px);
-  min-height: 620px;
-  max-height: 880px;
+  height: 74svh;
+  min-height: 500px;
+  max-height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
