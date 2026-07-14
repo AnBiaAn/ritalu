@@ -3970,7 +3970,7 @@ main {
   padding: clamp(74px, 10vw, 132px) 0;
 }
 .gatherings__inner {
-  width: calc(100% - 400px);
+  width: calc(100% - 48px);
   max-width: none;
   margin: 0 auto;
   text-align: center;
@@ -4047,7 +4047,7 @@ main {
 }
 @media (max-width: 640px) {
   .gatherings__inner {
-    width: calc(100% - 34px);
+    width: calc(100% - 20px);
   }
   .gatherings__form {
     flex-direction: column;
