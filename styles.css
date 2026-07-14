@@ -4021,21 +4021,25 @@ main {
   min-width: 0;
   padding: 14px 18px;
   border-radius: 999px;
-  border: 1px solid rgba(20, 16, 12, 0.18);
+  border: 1px solid rgba(10, 8, 6, 0.16);
   background: #fff;
-  font: inherit;
+  font-family: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
-  color: #1a1410;
+  color: var(--ink);
 }
 .gatherings__input:focus {
   outline: none;
   border-color: rgba(20, 16, 12, 0.5);
 }
 .gatherings__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
   padding: 14px 24px;
   border-radius: 999px;
   border: 0;
-  background: #0b0b0b;
+  background: var(--ink);
   color: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
