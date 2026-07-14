@@ -3966,13 +3966,15 @@ main {
 
 /* ---------- Ritalu Gatherings (community / experiences) ---------- */
 .gatherings {
-  background: #f2ede4;
-  padding: clamp(74px, 10vw, 132px) 0;
+  padding: clamp(80px, 9vw, 130px) 0;
 }
 .gatherings__inner {
   width: calc(100% - 48px);
   max-width: none;
   margin: 0 auto;
+  padding: clamp(64px, 8vw, 110px) clamp(32px, 5vw, 72px);
+  background: #f2ede4;
+  border-radius: 28px;
   text-align: center;
 }
 .gatherings__eyebrow {
@@ -4048,6 +4050,8 @@ main {
 @media (max-width: 640px) {
   .gatherings__inner {
     width: calc(100% - 20px);
+    padding: 52px 22px;
+    border-radius: 18px;
   }
   .gatherings__form {
     flex-direction: column;
