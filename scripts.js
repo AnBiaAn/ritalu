@@ -909,3 +909,36 @@ if (applyModal) {
   }, { passive: true });
   updateActive();
 })();
+
+/* ---------- Ritalu Gatherings: interest capture -> Google Sheet (tagged) ---------- */
+(function () {
+  const form = document.querySelector("[data-gatherings-form]");
+  if (!form) return;
+  const thanks = document.querySelector("[data-gatherings-thanks]");
+  const emailInput = form.querySelector('input[name="email"]');
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = (emailInput && emailInput.value.trim()) || "";
+    if (!email || !email.includes("@")) {
+      emailInput && emailInput.focus();
+      return;
+    }
+    if (window.ritTrack) ritTrack("gatherings_interest", {});
+    const gf = (window.RITALU && window.RITALU.googleForm) || null;
+    if (gf && gf.action) {
+      const body = new URLSearchParams();
+      body.set(gf.name, "Gatherings interest");
+      body.set(gf.email, email);
+      try {
+        fetch(gf.action, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body.toString(),
+        });
+      } catch (err) {}
+    }
+    form.hidden = true;
+    if (thanks) thanks.hidden = false;
+  });
+})();

@@ -3963,3 +3963,92 @@ main {
     transition: transform 60ms linear;
   }
 }
+
+/* ---------- Ritalu Gatherings (community / experiences) ---------- */
+.gatherings {
+  background: #f2ede4;
+  padding: clamp(74px, 10vw, 132px) clamp(24px, 5vw, 60px);
+}
+.gatherings__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.gatherings__eyebrow {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9a8e7c;
+  margin: 0 0 18px;
+}
+.gatherings__title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(40px, 8vw, 62px);
+  line-height: 1.02;
+  color: #1a1410;
+  margin: 0 0 20px;
+}
+.gatherings__sub {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #5c554b;
+  max-width: 32rem;
+  margin: 0 auto 34px;
+}
+.gatherings__form {
+  display: flex;
+  gap: 10px;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.gatherings__input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(20, 16, 12, 0.18);
+  background: #fff;
+  font: inherit;
+  font-size: 15px;
+  color: #1a1410;
+}
+.gatherings__input:focus {
+  outline: none;
+  border-color: rgba(20, 16, 12, 0.5);
+}
+.gatherings__btn {
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: 0;
+  background: #0b0b0b;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+.gatherings__btn:hover {
+  opacity: 0.85;
+}
+.gatherings__thanks {
+  margin: 22px 0 0;
+  color: #1a1410;
+  font-size: 16px;
+}
+.gatherings__fine {
+  margin: 22px 0 0;
+  font-size: 13px;
+  color: #9a8e7c;
+}
+@media (max-width: 640px) {
+  .gatherings__form {
+    flex-direction: column;
+  }
+  .gatherings__btn {
+    width: 100%;
+  }
+}
