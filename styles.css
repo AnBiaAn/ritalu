@@ -4009,7 +4009,7 @@ main {
 .gatherings__form {
   display: flex;
   gap: 10px;
-  max-width: 540px;
+  max-width: 620px;
   margin: 0 auto;
 }
 .gatherings__input {
