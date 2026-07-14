@@ -4063,7 +4063,7 @@ main {
 }
 @media (max-width: 640px) {
   .gatherings__inner {
-    width: calc(100% - 20px);
+    width: calc(100% - 32px);
     padding: 52px 16px;
     border-radius: 18px;
     height: auto;
