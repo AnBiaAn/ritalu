@@ -4013,7 +4013,7 @@ main {
 .gatherings__form {
   display: flex;
   gap: 10px;
-  max-width: 620px;
+  max-width: 644px;
   margin: 0 auto;
 }
 .gatherings__input {
